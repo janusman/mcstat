@@ -25,6 +25,7 @@
 require_once 'lib/mcstat.inc';
 
 ini_set('display_errors', 0);
+error_reporting(E_ALL & ~E_NOTICE);
 
 // If we are running this file directly, exec the session handler
 if (PHP_SAPI === 'cli' && basename($argv[0]) == basename(__FILE__)) {

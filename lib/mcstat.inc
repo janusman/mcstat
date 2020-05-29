@@ -263,7 +263,10 @@ class mcstat_reporter
 
     foreach($start as $key => $value) {
       $t_val = $value;
-      $s_val = $last[$key] - $start[$key];
+      $s_val = 0;
+      if (is_numeric($last[$key])) {
+        $s_val = $last[$key] - $start[$key];
+      }
       switch ($key) {
       case 'curr_connections':
          $t_val = " ";
